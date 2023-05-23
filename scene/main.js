@@ -1,6 +1,6 @@
 const obstacles = [
     [100, -275], [200, -275], [200, -225]
-]
+];
 
 function start() {
     background = create_rect(
@@ -21,7 +21,7 @@ function start() {
             "obstacle", 
             obstacles[obstacle], 0, 
             [50, 50], [255, 255, 255]
-            );
+        );
     }
 
     set_gui("fps", true);
@@ -29,10 +29,8 @@ function start() {
 }
 
 function update() {
-    transform(player, 
-        [get_pos(player)[0] + 0, get_pos(player)[1]],
-        0
-        )
-    transform(player_center, get_pos(player), 0)
-    transform("camera", get_pos(player), 0)
+    let pos = get_pos(player);
+    transform(player, [pos[0] + 1, pos[1]], 0);
+    transform(player_center, pos, 0);
+    transform("camera", pos, 0);
 }
