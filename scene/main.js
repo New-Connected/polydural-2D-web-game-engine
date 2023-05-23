@@ -11,6 +11,7 @@ function start() {
 
     transform(rect1, [-20, 10], 0);
     set_gui("fps", true);
+    set_fps(120);
 }
 
 function update() {
