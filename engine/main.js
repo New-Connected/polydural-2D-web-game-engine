@@ -1,7 +1,12 @@
 const canvas = document.getElementById("main_canvas");
 const ctx = canvas.getContext("2d");
 
-started = false;
+let date = new Date();
+var time = date.getTime();
+
+var started = false;
+var frame = 0;
+var fps = 0;
 
 window.entities = [];
 
@@ -32,16 +37,29 @@ function draw() {
     }
 }
 
+function update_fps() {
+    let date = new Date();
+    let time_new = date.getTime();
+    if (time_new > time + 1000) {
+        fps = frame;
+        frame = 0;
+        time = time_new;
+    }
+    frame++;
+}
+
 function run() {
-    resize();
-    clear();
-    draw();
     if (window.loaded == true && started == false) {
         start();
         started = true;
     } else if (window.loaded == true && started == true) {
+        update_fps();
+        resize();
+        clear();
+        draw();
+        draw_gui(ctx, fps);
         update();
     }
 }
 
-setInterval(run, 10);
+setInterval(run, 1000 / 120);

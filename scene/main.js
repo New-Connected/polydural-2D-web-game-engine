@@ -15,7 +15,7 @@ function start() {
 
 function update() {
     transform(rect2, 
-        [get_pos(rect2)[0] + 1, get_pos(rect2)[1]],
+        [get_pos(rect2)[0] + 0.5, get_pos(rect2)[1]],
         0
         )
 }
