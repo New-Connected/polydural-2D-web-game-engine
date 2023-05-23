@@ -60,9 +60,10 @@ function run() {
     update_fps();
     resize();
     clear();
+    update();
+    physics();
     draw();
     draw_gui(ctx, fps);
-    update();
 }
 
 function waitForLoad() {
