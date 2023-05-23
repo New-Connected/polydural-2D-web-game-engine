@@ -10,7 +10,7 @@ function start() {
         );
 
     transform(rect1, [-20, 10], 0);
-    console.log(get_pos(rect1));
+    set_gui("fps", true);
 }
 
 function update() {

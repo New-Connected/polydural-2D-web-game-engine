@@ -40,8 +40,8 @@ function draw() {
 function update_fps() {
     let date = new Date();
     let time_new = date.getTime();
-    if (time_new > time + 1000) {
-        fps = frame;
+    if (time_new > time + 100) {
+        fps = frame * 10;
         frame = 0;
         time = time_new;
     }
@@ -62,4 +62,4 @@ function run() {
     }
 }
 
-setInterval(run, 1000 / 120);
+setInterval(run, 1000 / 110);
