@@ -1,7 +1,14 @@
 const canvas = document.getElementById("main_canvas");
 const ctx = canvas.getContext("2d");
 
+started = false;
+
 window.entities = [];
+
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
 
 function clear() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -26,8 +33,15 @@ function draw() {
 }
 
 function run() {
+    resize();
     clear();
     draw();
+    if (window.loaded == true && started == false) {
+        start();
+        started = true;
+    } else if (window.loaded == true && started == true) {
+        update();
+    }
 }
 
 setInterval(run, 10);

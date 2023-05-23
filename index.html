@@ -7,12 +7,18 @@
         <title>2d game engine</title>
     </head>
     <body>
-        <canvas id="main_canvas">
+        <canvas id="main_canvas" style="position: absolute; left: 0; top: 0;">
             your browser seems to be out of date!
         </canvas>
+
+        <script>window.loaded = false</script>
+
         <script src="engine/main.js"></script>
         <script src="engine/create_entity.js"></script>
         <script src="engine/change_entity.js"></script>
+
         <script src="scene/main.js"></script>
+
+        <script>window.loaded = true</script>
     </body>
 </html>
