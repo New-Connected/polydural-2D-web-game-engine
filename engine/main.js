@@ -8,6 +8,7 @@ var started = false;
 var frame = 0;
 var fps = 0;
 var max_fps = 120;
+var cam_pos = [0, 0];
 
 window.entities = [];
 
@@ -29,9 +30,10 @@ function draw() {
                 entities[entity][5][2] + ")";
             ctx.fillRect(
                 entities[entity][1][0] + canvas.width / 2 -
-                entities[entity][3][0] / 2, 
-                entities[entity][1][1] + canvas.height / 2 -
-                entities[entity][3][1] / 2, 
+                entities[entity][3][0] / 2 - cam_pos[0], 
+                canvas.height - 
+                (entities[entity][1][1] + canvas.height / 2 -
+                entities[entity][3][1] / 2 + cam_pos[1]), 
                 entities[entity][3][0], entities[entity][3][1]
                 );
         }

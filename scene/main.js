@@ -3,7 +3,7 @@ var rect2;
 
 function start() {
     rect1 = create_rect(
-        "rect1", [-20, 0], 0, [20, 20], [255, 0, 0]
+        "rect1", [0, 0], 0, [20, 20], [255, 0, 0]
         );
     rect2 = create_rect(
         "rect1", [20, 0], 0, [20, 20], [255, 0, 255]
@@ -19,4 +19,5 @@ function update() {
         [get_pos(rect2)[0] + 0.5, get_pos(rect2)[1]],
         0
         )
+    transform("camera")
 }
