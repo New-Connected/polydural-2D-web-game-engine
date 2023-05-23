@@ -31,9 +31,10 @@ function draw() {
             ctx.fillRect(
                 entities[entity][1][0] + canvas.width / 2 -
                 entities[entity][3][0] / 2 - cam_pos[0], 
-                canvas.height - 
-                (entities[entity][1][1] + canvas.height / 2 -
-                entities[entity][3][1] / 2 + cam_pos[1]), 
+                (canvas.height - 
+                (entities[entity][1][1] + cam_pos[1])) - 
+                    canvas.height / 2 - 
+                    entities[entity][3][1] / 2, 
                 entities[entity][3][0], entities[entity][3][1]
                 );
         }
