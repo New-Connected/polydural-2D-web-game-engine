@@ -29,6 +29,7 @@ function start() {
 
     add_modifier(player, "gravity");
     add_modifier(floor_test, "collider");
+    add_modifier(floor, "collider");
 
     set_gui("fps", true);
     set_fps(120);
@@ -36,7 +37,11 @@ function start() {
 
 function update() {
     let pos = get_pos(player);
-    transform(player, [pos[0] + 0, pos[1]], 0);
+    let pos2 = get_pos(floor_test);
+    if (pos[1] < -100) {
+        transform(player, [pos[0] + 1, pos[1]], 0);
+    }
     transform(player_center, pos, 0);
+    transform(floor_test, [pos2[0] + 0.1, pos2[1]], 0);
     transform("camera", pos, 0);
 }
