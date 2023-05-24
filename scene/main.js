@@ -4,10 +4,10 @@ const obstacles = [
 
 function start() {
     background = create_rect(
-        "background", [0, 0], 0, [20000, 2000], [222, 75, 217]
+        "background", [0, 0], 0, [20000, 2000], [50, 50, 50]
     );
     floor = create_rect(
-        "rect1", [0, -500], 0, [20000, 400], [255, 0, 255]
+        "rect1", [0, -500], 0, [20000, 400], [100, 100, 100]
     );
     floor_test = create_rect(
         "rect1", [-30, -100], 0, [50, 50], [255, 255, 255]
@@ -16,7 +16,7 @@ function start() {
         "player", [0, 0], 0, [50, 50], [255, 255, 255]
     );
     player_center = create_rect(
-        "player", [0, 0], 0, [40, 40], [255, 0, 255]
+        "player", [0, 0], 0, [40, 40], [100, 100, 100]
     );
     
     for (let obstacle = 0; obstacle < obstacles.length; obstacle++) {
