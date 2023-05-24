@@ -10,7 +10,7 @@ function start() {
         "rect1", [0, -500], 0, [20000, 400], [100, 100, 100]
     );
     floor_test = create_rect(
-        "rect1", [-30, -100], 0, [50, 50], [255, 255, 255]
+        "rect1", [-100, -275], 0, [50, 50], [255, 255, 255]
     );
     player = create_rect(
         "player", [0, 0], 0, [50, 50], [255, 255, 255]
@@ -20,11 +20,12 @@ function start() {
     );
     
     for (let obstacle = 0; obstacle < obstacles.length; obstacle++) {
-        create_rect(
+        let _obstacle = create_rect(
             "obstacle", 
             obstacles[obstacle], 0, 
             [50, 50], [255, 255, 255]
         );
+        add_modifier(_obstacle, "collider");
     }
 
     add_modifier(player, "gravity");
@@ -38,7 +39,7 @@ function start() {
 function update() {
     let pos = get_pos(player);
     let pos2 = get_pos(floor_test);
-    if (pos[1] < -100) {
+    if (pos[1] < -100 && false) {
         transform(player, [pos[0] + 1, pos[1]], 0);
     }
     transform(player_center, pos, 0);
